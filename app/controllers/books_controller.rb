@@ -13,7 +13,7 @@ class BooksController < ApplicationController
 
   def destroy
   	@book.destroy
-    flash[:success] = "Micropost deleted"
+    flash[:success] = "Book deleted"
     redirect_to request.referrer || root_url
   end
 
