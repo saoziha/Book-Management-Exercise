@@ -1,0 +1,12 @@
+<li id="book-<%= book.id %>" >
+  <%= link_to gravatar_for(book.user, size: 50), book.user %>
+  <span class="user" style="color:blue"><%= link_to book.user.name, book.user %></span>
+  <span class="title" ><dt>Title:</dt><%= book.title %></span> 
+  <span class="description"><dt>Description:</dt><%= book.description %></span>
+  <span class="author" ><dt>Author:</dt><%= book.author %></span>
+  <span class="year"><dt>Year:</dt><%= book.year %></span>
+  <span class="review"><dt>Review:</dt><%= book.review %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(book.created_at) %> ago.
+  </span>
+</li>

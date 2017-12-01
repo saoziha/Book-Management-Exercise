@@ -69,6 +69,13 @@ test "password should be present (nonblank)" do
     assert_not @user.authenticated?(:remember, '')
   end
 
+  test "associated books should be destroyed" do
+    @user.save
+    @user.books.create!(title:"Dore", description: "Lorem ipsum", author:"GG", year:"2012", review:"good")
+    assert_difference 'Book.count', -1 do
+      @user.destroy
+    end
+  end
 
 
 end

@@ -19,4 +19,14 @@ User.create!(name:  "admin",
   			   activated: true,
                activated_at: Time.zone.now)
 
+users = User.order(:created_at).take(6)
+10.times do
+  title = Faker::Name.name
+  description = Faker::Lorem.sentence(5)
+  author = "NA"
+  year = "2012"
+  review = Faker::Lorem.sentence(5)
+  users.each { |user| user.books.create!(title:title, description:description, author:author, year:year, review:review) }
+end
+
 end
