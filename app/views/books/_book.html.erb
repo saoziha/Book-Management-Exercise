@@ -5,7 +5,8 @@
   <span class="description"><dt>Description:</dt><%= book.description %></span>
   <span class="author" ><dt>Author:</dt><%= book.author %></span>
   <span class="year"><dt>Year:</dt><%= book.year %></span>
-  <span class="review"><dt>Review:</dt><%= book.review %></span>
+  <span class="review"><dt>Review:</dt><%= book.review %>
+    <%= image_tag book.picture.url if book.picture? %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(book.created_at) %> ago.
   </span>
