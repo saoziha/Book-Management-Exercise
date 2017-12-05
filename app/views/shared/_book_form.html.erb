@@ -9,8 +9,12 @@
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 
-  <span class="picture">
+  <span class="picture"> <dt>Please upload picture here</dt>
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
+
+  <span class="book"> <dt>Please upload Book file here</dt>
+    <%= f.file_field :bookfile, accept: 'file/pdf' %>
   </span>
 <% end %>
 
